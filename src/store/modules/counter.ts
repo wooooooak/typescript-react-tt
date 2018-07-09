@@ -1,7 +1,7 @@
-import { createAction, handleActions } from 'redux-actions';
+import { createAction, handleActions } from "redux-actions";
 
-const INCREMENT = 'counter/INCREMENT';
-const DECREMENT = 'counter/DECREMENT';
+const INCREMENT = "counter/INCREMENT";
+const DECREMENT = "counter/DECREMENT";
 
 export const actionCreators = {
   increment: createAction(INCREMENT),
@@ -19,8 +19,6 @@ const initialState: CounterState = {
 export default handleActions<CounterState>(
   {
     [INCREMENT]: (state, payload) => {
-      console.log(state);
-      console.log(payload);
       return { value: state.value + 1 };
     },
     [DECREMENT]: state => ({ value: state.value - 1 })
